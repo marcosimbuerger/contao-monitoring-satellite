@@ -1,0 +1,31 @@
+{
+  "name": "marcosimbuerger/contao-monitoring-satellite",
+  "description": "Monitoring Satellite for Contao",
+  "keywords": ["monitoring", "satellite", "contao"],
+  "homepage": "https://github.com/marcosimbuerger/contao-monitoring-satellite",
+  "type": "contao-bundle",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Marco Simbürger",
+      "homepage": "https://github.com/marcosimbuerger",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": "^7.4",
+    "contao/core-bundle": "^4.9"
+  },
+  "conflict": {
+    "contao/core": "*",
+    "contao/manager-plugin": "<2.0 || >=3.0"
+  },
+  "extra": {
+    "contao-manager-plugin": "MarcoSimbuerger\\MonitoringSatelliteBundle\\ContaoManager\\Plugin"
+  },
+  "autoload": {
+    "psr-4": {
+      "MarcoSimbuerger\\MonitoringSatelliteBundle\\": "src/"
+    }
+  }
+}

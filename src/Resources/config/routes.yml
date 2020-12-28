@@ -1,0 +1,8 @@
+marcosimbuerger_monitoringsatellite_get:
+  path: /monitoring-satellite/v1/get
+  defaults:
+    _controller: MarcoSimbuerger\MonitoringSatelliteBundle\Controller\MonitoringSatelliteController::get
+    _scope: frontend
+    _token_check: false
+  methods:
+    - GET
