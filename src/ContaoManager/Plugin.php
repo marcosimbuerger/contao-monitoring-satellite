@@ -62,7 +62,7 @@ class Plugin implements BundlePluginInterface, ExtensionPluginInterface, Routing
 
                 // Add the Monitoring Satellite's security authentication provider.
                 $extensionConfig['providers'] = array_merge($extensionConfig['providers'], [
-                    'monitoring_satellite_bundle' => [
+                    'monitoring_satellite_auth_provider' => [
                         'memory' => [
                             'users' => [
                                 $monitoringSatelliteConfig['basic_auth']['username'] => [
@@ -82,7 +82,7 @@ class Plugin implements BundlePluginInterface, ExtensionPluginInterface, Routing
                         'monitoring_satellite_controller' => [
                             'pattern' => '^/monitoring-satellite/v1/get',
                             'http_basic' => [
-                                'provider' => 'monitoring_satellite_bundle',
+                                'provider' => 'monitoring_satellite_auth_provider',
                             ],
                         ],
                     ],
