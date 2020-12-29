@@ -9,7 +9,9 @@ $ composer require marcosimbuerger/contao-monitoring-satellite
 
 ## Configuration
 Add the basic authentication credentials to the parameters.yml file.
+
 Use `vendor/bin/contao-console security:encode-password` to generate the password hash.
+
 Encode your password with the `Symfony\Component\Security\Core\User\User` encoder.
 
 ```yaml
@@ -27,7 +29,7 @@ Call `/monitoring-satellite/v1/get`.
 It should be protected by basic authentication and return the data after successful authentication.
 
 ## Add the Satellite to the Station
-Add this Monitoring Satellite to the Monitoring Station. See [documentation of Monitoring Satellite](https://github.com/marcosimbuerger/monitoring-station).
+Add this Monitoring Satellite to the Monitoring Station. See [documentation of the Monitoring Station](https://github.com/marcosimbuerger/monitoring-station).
 
 ## License
 This bundle is released under the MIT license. See the included [LICENSE](LICENSE) file for more information.
