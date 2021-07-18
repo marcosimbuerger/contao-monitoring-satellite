@@ -42,6 +42,10 @@ class Plugin implements BundlePluginInterface, ExtensionPluginInterface, Routing
         }
 
         // Get the parameter values from app/config/parameters.yml.
+        if (!$container->hasParameter('monitoring_satellite')) {
+            return $extensionConfigs;
+        }
+
         $monitoringSatelliteConfig = $container->getParameter('monitoring_satellite');
 
         if (!isset($monitoringSatelliteConfig['basic_auth']['username']) || empty($monitoringSatelliteConfig['basic_auth']['username']) ||
