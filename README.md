@@ -17,10 +17,12 @@ Encode your password with the `Symfony\Component\Security\Core\User\User` encode
 ```yaml
 # app/config/parameters.yml
 
-monitoring_satellite:
-    basic_auth:
-        username: foo
-        password: '$argon2id$v=19$m=65536,t=4,p=1$ofPY6RT+0rCE74M0AlPpzQ$BeiGUhv27D4/6FBmNKC0r4dhImZqj55EfOwYqjxaVbE'
+parameters:
+    ...
+    monitoring_satellite:
+        basic_auth:
+            username: foo
+            password: '$argon2id$v=19$m=65536,t=4,p=1$ofPY6RT+0rCE74M0AlPpzQ$BeiGUhv27D4/6FBmNKC0r4dhImZqj55EfOwYqjxaVbE'
 ```
 
 ## Test
