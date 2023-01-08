@@ -12,7 +12,7 @@ use Contao\ManagerPlugin\Routing\RoutingPluginInterface;
 use MarcoSimbuerger\MonitoringSatelliteBundle\MarcoSimbuergerMonitoringSatelliteBundle;
 use Symfony\Component\Config\Loader\LoaderResolverInterface;
 use Symfony\Component\HttpKernel\KernelInterface;
-use Symfony\Component\Security\Core\User\User;
+use Symfony\Component\Security\Core\User\InMemoryUser;
 
 /**
  * Class Plugin.
@@ -57,11 +57,9 @@ class Plugin implements BundlePluginInterface, ExtensionPluginInterface, Routing
         foreach ($extensionConfigs as &$extensionConfig) {
             if (isset($extensionConfig['firewalls'])) {
 
-                // This Symfony internal User class is used by Symfony to represent in-memory users.
-                $extensionConfig['encoders'] = array_merge($extensionConfig['encoders'], [
-                    User::class => [
-                        'algorithm' => 'auto'
-                    ],
+                // This Symfony internal InMemoryUser class is used by Symfony to represent in-memory users.
+                $extensionConfig['password_hashers'] = array_merge($extensionConfig['password_hashers'], [
+                    InMemoryUser::class => 'auto',
                 ]);
 
                 // Add the Monitoring Satellite's security authentication provider.
