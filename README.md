@@ -10,9 +10,9 @@ $ composer require marcosimbuerger/contao-monitoring-satellite
 ## Configuration
 Add the basic authentication credentials to the parameters.yml file.
 
-Use `vendor/bin/contao-console security:encode-password` to generate the password hash.
+Use `vendor/bin/contao-console security:hash-password` to generate the password hash.
 
-Encode your password with the `Symfony\Component\Security\Core\User\User` encoder.
+Use the `InMemoryUser` class to hash the password.
 
 ```yaml
 # app/config/parameters.yml
